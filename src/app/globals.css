@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Zusätzliche Stile für den Light/Dark Mode */
+html.light {
+  background-color: #f0f8ff !important;
+  color: #171717 !important;
+}
+
+html.dark {
+  background-color: #111827 !important;
+  color: #f9fafb !important;
+}
+
+html.light body,
+html.light .min-h-screen {
+  background-color: #f0f8ff !important;
+}
+
+html.dark body,
+html.dark .min-h-screen {
+  background-color: #111827 !important;
+}
+
+/* Stile für die Karte im Light/Dark Mode */
+.leaflet-container {
+  background-color: #f0f0f0 !important;
+}
+
+.dark .leaflet-container {
+  background-color: #333 !important;
+  filter: brightness(0.8) contrast(1.2);
+}
+
+/* Stile für die Rechtecke im Light/Dark Mode */
+.bg-gray-700 {
+  background-color: #374151 !important;
+}
+
+.bg-gray-800 {
+  background-color: #1f2937 !important;
+}
+
+html.light .bg-gray-700,
+html.light .bg-gray-800,
+html.light .bg-white {
+  background-color: #ffffff !important;
+}
+
+html.dark .bg-white {
+  background-color: #374151 !important;
+}
+
+/* Gezieltere Stile für Text im Light/Dark Mode */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark p,
+html.dark li,
+html.dark .text-gray-900 {
+  color: #ededed !important;
+  background-color: transparent !important;
+}
+
+html.light h1,
+html.light h2,
+html.light h3,
+html.light p,
+html.light .text-gray-900 {
+  color: #171717 !important;
+  background-color: transparent !important;
+}
+
+/* Spezifische Stile für die Leaflet-Steuerelemente */
+.leaflet-control a {
+  color: #333 !important;
+}
+
+html.dark .leaflet-control a {
+  color: #333 !important;
+}
+
+/* Stile für die Positionsanzeige */
+html.light .flex.items-center {
+  color: #171717 !important;
+}
+
+html.dark .flex.items-center {
+  color: #ededed !important;
+}
+
+/* Stile für die Karte */
+.leaflet-container {
+  background-color: #f0f0f0 !important;
+}
+
+html.dark .leaflet-container {
+  background-color: #333 !important;
+  filter: brightness(0.8) contrast(1.2);
+}
