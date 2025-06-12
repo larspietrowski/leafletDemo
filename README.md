@@ -1,4 +1,4 @@
-# DemoNextJSLeaflet2
+# DemoNextJSLeaflet
 
 ## Projektbeschreibung
 
