@@ -8,22 +8,15 @@ export const metadata: Metadata = {
   description: "A map showing your location based on your IP address",
 };
 
-// Hilfsfunktion, um params.locale zu extrahieren
-async function getLocale(params: { locale: string }) {
-  // Durch das Awaiten von params wird sichergestellt, dass wir die Eigenschaft korrekt verwenden
-  const resolvedParams = await Promise.resolve(params);
-  return resolvedParams.locale;
-}
-
 export default async function LocaleLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
-  // Verwenden der Hilfsfunktion, um locale zu extrahieren
-  const locale = await getLocale(params);
+  // Params ist jetzt ein Promise und muss awaited werden
+  const { locale } = await params;
   const messages = await getMessages(locale);
 
   return (
