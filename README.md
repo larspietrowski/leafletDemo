@@ -70,4 +70,4 @@ MIT License
 
 ---
 
-*Erstellt von [dein-benutzername]. Bei Fragen oder Anregungen bitte ein Issue eröffnen.*
+*Bei Fragen oder Anregungen bitte ein Issue eröffnen.*
