@@ -3,20 +3,13 @@ import Link from 'next/link';
 import MapWrapper from '@/components/MapWrapper';
 import ThemeToggle from '@/components/ThemeToggle';
 
-// Hilfsfunktion, um params.locale zu extrahieren
-async function getLocale(params: { locale: string }) {
-  // Durch das Awaiten von params wird sichergestellt, dass wir die Eigenschaft korrekt verwenden
-  const resolvedParams = await Promise.resolve(params);
-  return resolvedParams.locale;
-}
-
 export default async function Home({
   params
 }: {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
-  // Verwenden der Hilfsfunktion, um locale zu extrahieren
-  const locale = await getLocale(params);
+  // Params ist jetzt ein Promise und muss awaited werden
+  const { locale } = await params;
   // Pass the locale to getTranslations
   const t = await getTranslations({ locale });
   const otherLocale = locale === 'de' ? 'en' : 'de';
