@@ -15,8 +15,7 @@ Dieses Projekt demonstriert die Integration von [Leaflet](https://leafletjs.com/
 
 1. **Repository klonen**
    ```bash
-   git clone https://github.com/dein-benutzername/DemoNextJSLeaflet2.git
-   cd DemoNextJSLeaflet2/leafletdemo
+   git clone https://github.com/....
    ```
 
 2. **Abhängigkeiten installieren**
